@@ -1,0 +1,491 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+h1 {
+	font-size: 2.5em;
+	margin: 50px 0 30px 0;
+	text-align: center;
+	color: #222;
+}
+
+p {
+	color: #777;
+}
+
+h2, h3, h5 {
+	color: #6b6b6b;
+}
+
+h2 {
+	font-size: 1.8em;
+}
+
+h3 {
+	font-size: 1.3em;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+}
+
+main div {
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+/***NAV***/
+
+nav {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 62px;
+	background: url(/public/images/bg-dark.jpg);
+	position: sticky;
+	top: 0;
+	z-index: 5;
+}
+
+#logo {
+	margin: 18px 0 0 20px;
+}
+
+nav a {
+	color: white;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+	margin: 22px 40px 0 auto;
+}
+
+nav ul li {
+	margin: 0 10px 0 15px;
+}
+
+
+
+
+/***SLIDER (BLOCK1)***/
+
+.block1 img {
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+}
+
+.block1 {
+	position: relative;
+	display: inline-block;
+}
+
+.block1 h1,
+.block1 p,
+.block1 button {
+	position: absolute;
+	color: white;
+}
+
+.block1 h1 {
+	bottom: 63vh;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-size: 3em;
+}
+
+.block1 p {
+	bottom: 55vh;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-size: 1.5em;
+	color: white;
+}
+
+.block1 .send {
+	bottom: 42vh;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-size: 1.5em;
+	color: white;
+	background-color: transparent;
+	border: 1px solid white;
+	border-radius: 8px;
+	padding: 7px;
+	transition: 0.5s;
+	cursor: pointer;
+	width: 20%;
+}
+
+.block1 .send:hover {
+	background-color: white;
+	color: black;
+}
+
+.block1 .next_button {
+	right: 15px;
+}
+
+.block1 .prev_button {
+	left: 15px;
+}
+
+.block1 .next_button,
+.block1 .prev_button {
+	bottom: 50vh;
+	background: transparent;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 2.5em;
+	opacity: 0.5;
+}
+
+
+
+
+
+
+
+
+/***BLOCK2***/
+
+.block2 {
+	height: 70vh;
+	text-align: center;
+	width: 80%;
+	margin-bottom: 8%;
+}
+
+.contents {
+	display: flex;
+	flex-direction: row;
+}
+
+.contents > div {
+	margin: 0 auto;
+	height: 100%;
+	width: 40%;
+}
+
+.contents h5 {
+	font-size: 1.2em;
+	margin-bottom: 7px;
+}
+
+.contents p {
+	white-space: pre-line;
+	word-wrap: break-word;
+}
+
+
+
+/****BLOCK3****/
+
+.block3 {
+	height: 80vh;
+	width: 100%;
+	background: url(/public/images/bg-dark.jpg);
+	text-align: center;
+	display: inline-block;
+}
+
+.block3 h1 {
+	color: #D3D3D3;
+}
+
+.block3 h3 {
+	color: #A9A9A9;
+}
+
+.block3 p {
+	color: #808080;
+}
+
+
+
+/****GALLERY****/
+
+.gallery {
+	width: 100%;
+	height: 800px;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 3%;
+}
+
+
+.pics {
+	width: 80%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	row-gap: 20px;
+	column-gap: 20px;
+	justify-content: center;
+}
+
+.pics > div {
+	width: 100%;
+	height: 90%;
+	background: gray;
+}
+
+.separator {
+	color: black;
+	font-size: 2.5em;
+	margin: 10px 0 200px 0;
+}
+
+
+
+
+
+
+/****BLOCK_VIDEO****/
+
+.video_block {
+	width: 100%;
+	height: 75vh;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.video_block .bg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.35);
+}
+
+.video_block video {
+	pointer-events: none;
+	margin-bottom: 200px;
+}
+
+.video_block h1,
+.video_block h3 {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	color: #FFF;
+	z-index: 1;
+}
+
+.video_block h1 {
+	bottom: 30vh;
+}
+
+.video_block h3 {
+	bottom: 20vh;
+}
+
+
+
+
+/****NEWS****/
+
+.news {
+	width: 100%;
+	padding-bottom: 30px;
+}
+
+.news > div {
+	width: 30%;
+	border: 1px solid black;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	padding: 20px;
+}
+
+.news > div > .img_wrapper {
+	height: 150px;
+	width: 150px;
+	background: gray;
+	margin: 0;
+}
+
+.img_wrapper img {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
+
+.news h4,
+.news p {
+	text-align: left;
+	padding-bottom: 10px;
+}
+
+.news > div > .content_of_news {
+	width: 50%;
+	margin: 0 20px 0 20px;
+}
+
+
+
+/****ABOUT COMPANY****/
+.about_company {
+	width: 100%;
+	height: 85vh;
+	display: flex;
+	flex-direction: row;
+}
+
+.about_company h1,
+.about_company h2,
+.about_company p {
+	text-align: left;
+	padding: 0 0 10px 55px;
+}
+
+.about_company > div {
+	width: 50vw;
+}
+
+.about_company .img_wrapper {
+	height: 100%;
+	background: gray;
+}
+
+.img_wrapper img {
+	object-fit: cover;
+	width: 100%;
+}
+
+
+
+/****MODELS****/
+.model_processes {
+	width: 60%;
+	height: 80vh;
+	margin-bottom: 200px;
+}
+
+.circles {
+	display: flex;
+	flex-direction: row;
+}
+
+.circles > div {
+	background: gray;
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	position: absolute;
+}
+
+.circles > div > p {
+	margin: 118px 0;
+	color: white;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.circles .blue {
+	background: rgba(81, 161, 210, 0.75);
+}
+
+.circles .red {
+	background: rgba(210, 81, 81, 0.75);
+	left: 34vw;
+}
+
+.circles .green {
+	background: rgba(71, 191, 79, 0.75);
+	left: 48vw;
+}
+
+.circles .yellow {
+	background: rgba(209, 187, 53, 0.75);
+	left: 62vw;
+}
+
+.model_processes > p {
+	margin-top: 300px;
+}
+
+
+
+
+/***FOOTER***/
+footer {
+	width: 100%;
+	height: 60vh;
+	background: url(/public/images/bg-dark.jpg);
+	color: white;
+	display: flex;
+}
+
+footer h3,
+footer .logo,
+.wrapper .company {
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+footer p {
+	margin: 5px 0;
+}
+
+footer p > i {
+	margin-right: 5px;
+}
+
+.wrapper {
+	width: 85%;
+	margin: 50px auto;
+	padding-top: 10px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	justify-content: center;
+}
+
+.wrapper > div {
+	padding: 20px;
+}
+
+.wrapper .by {
+	grid-column: 1 / -1;
+	border-top: 1px solid white;
+}
+
