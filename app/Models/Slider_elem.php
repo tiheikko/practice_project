@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Block2_elem extends Model
+class Slider_elem extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
-    protected $table = 'block2_elems';
+    protected $table = 'slider_elems';
     protected $guarded = []; 
 }

@@ -10,11 +10,11 @@
 
 			<ul>
 				<li><a href="{{route('admin.edit_nav')}}">Навигация</a></li>
-				<li><a href="{{route('admin.edit_block1')}}">Слайдер</a></li>
-				<li><a href="{{route('admin.edit_block2')}}">Блок2</a></li>
-				<li><a href="{{route('admin.edit_block3')}}">Блок3</a></li>
+				<li><a href="{{route('admin.edit_slider')}}">Слайдер</a></li>
+				<li><a href="{{route('admin.edit_what_we_do')}}">Чем занимаемся</a></li>
+				<li><a href="{{route('admin.edit_excursion')}}">Блок с экскурсией</a></li>
 				<li><a href="{{route('admin.edit_gallery')}}">Галерея</a></li>
-				<li><a href="{{route('admin.edit_block4')}}">Блок4</a></li>
+				<li><a href="{{route('admin.edit_video_block')}}">Блок с видео</a></li>
 				<li><a href="{{route('admin.edit_news')}}">Новости</a></li>
 				<li><a href="{{route('admin.edit_company')}}">О компании</a></li>
 				<li><a href="{{route('admin.edit_processes')}}">Модель процессов</a></li>

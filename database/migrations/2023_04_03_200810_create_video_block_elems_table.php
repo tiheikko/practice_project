@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('block1_elems', function (Blueprint $table) {
+        Schema::create('video_block_elems', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
-            $table->string('button_name');
+            $table->string('subtitle');
 
             $table->timestamps();
             $table->softDeletes();
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('block1_elems');
+        Schema::dropIfExists('video_block_elems');
     }
 };

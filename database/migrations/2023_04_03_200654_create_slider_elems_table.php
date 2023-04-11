@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('block3_elems', function (Blueprint $table) {
+        Schema::create('slider_elems', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('subtitle');
-            $table->string('img_url');
+            $table->string('description');
+            $table->string('button_name');
 
             $table->timestamps();
             $table->softDeletes();
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('block3_elems');
+        Schema::dropIfExists('slider_elems');
     }
 };

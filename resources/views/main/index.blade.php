@@ -2,12 +2,11 @@
 
 @section('main_content')
 
-	<!-- SLIDER -->
-	<div class="block1">
+	<div class="slider">
 		<img src="{{asset('/images/slider/slider3-bg2.jpg')}}">
-		<h1>{{ $block1_elems->title }}</h1>
-		<p>{{ $block1_elems->description }}</p>
-		<button class="send">{{ $block1_elems->button_name }}</button>
+		<h1>{{ $slider_elems->title }}</h1>
+		<p>{{ $slider_elems->description }}</p>
+		<button class="send">{{ $slider_elems->button_name }}</button>
 		<button class="next_button"><i class="fa-solid fa-chevron-right"></i></button>
 		<button class="prev_button"><i class="fa-solid fa-chevron-left"></i></button>
 
@@ -15,29 +14,29 @@
 
 
 
-	<div class="block2">
-		<h1>{{ $block2_elems->title }}</h1>
-		<h3>{{ $block2_elems->subtitle }}</h3>
+	<div class="what_we_do">
+		<h1>{{ $what_we_do_elems->title }}</h1>
+		<h3>{{ $what_we_do_elems->subtitle }}</h3>
 
 		<div class="contents">
 			<div class="content1">
-				<h5>{{ $block2_elems->content1_title }}</h5>
-				<p>{{ $block2_elems->content1 }}</p>
+				<h5>{{ $what_we_do_elems->content1_title }}</h5>
+				<p>{{ $what_we_do_elems->content1 }}</p>
 			</div>
 
 			<div class="content2">
-				<h5>{{ $block2_elems->content2_title }}</h5>
-				<p>{{ $block2_elems->content2 }}</p>
+				<h5>{{ $what_we_do_elems->content2_title }}</h5>
+				<p>{{ $what_we_do_elems->content2 }}</p>
 			</div>
 		</div>
 	</div>
 
 
 
-	<div class="block3">
-		<h1>{{ $block3_elems->title }}</h1>
-		<h3>{{ $block3_elems->subtitle }}</h3>
-		<img src="asset( {{ $block3_elems->img_url }} )">
+	<div class="excursion">
+		<h1>{{ $excursion_elems->title }}</h1>
+		<h3>{{ $excursion_elems->subtitle }}</h3>
+		<img src="asset( {{ $excursion_elems->img_url }} )">
 	</div>
 
 
@@ -58,7 +57,6 @@
 	</div>
 
 
-	<!-- BLOCK4 -->
 	<div class="video_block">
 	
 		<div class="bg"> <!--Для затемнения-->
@@ -68,8 +66,8 @@
 			<source src="{{asset('/video/office.mp4')}}" type="video/mp4">
 		</video>
 
-		<h1>{{ $block4_elems->title }}</h1>
-		<h3>{{ $block4_elems->subtitle }}</h3>
+		<h1>{{ $video_block_elems->title }}</h1>
+		<h3>{{ $video_block_elems->subtitle }}</h3>
 	</div>
 
 
@@ -109,7 +107,7 @@
 
 
 
-	<div class="model_processes">
+	<div class="model_of_processes">
 		<h1>{{ $processes_elems->title }}</h1>
 		<h3>{{ $processes_elems->subtitle }}</h3>
 

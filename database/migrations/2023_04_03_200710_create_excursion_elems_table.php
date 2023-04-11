@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('block4_elems', function (Blueprint $table) {
+        Schema::create('excursion_elems', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('subtitle');
+            $table->string('img_url');
 
             $table->timestamps();
             $table->softDeletes();
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('block4_elems');
+        Schema::dropIfExists('excursion_elems');
     }
 };

@@ -91,27 +91,27 @@ nav ul li {
 
 
 
-/***SLIDER (BLOCK1)***/
+/***SLIDER ***/
 
-.block1 img {
+.slider img {
 	width: 100vw;
 	height: 100vh;
 	object-fit: cover;
 }
 
-.block1 {
+.slider {
 	position: relative;
 	display: inline-block;
 }
 
-.block1 h1,
-.block1 p,
-.block1 button {
+.slider h1,
+.slider p,
+.slider button {
 	position: absolute;
 	color: white;
 }
 
-.block1 h1 {
+.slider h1 {
 	bottom: 63vh;
 	margin-left: auto;
 	margin-right: auto;
@@ -121,7 +121,7 @@ nav ul li {
 	font-size: 3em;
 }
 
-.block1 p {
+.slider p {
 	bottom: 55vh;
 	margin-left: auto;
 	margin-right: auto;
@@ -132,7 +132,7 @@ nav ul li {
 	color: white;
 }
 
-.block1 .send {
+.slider .send {
 	bottom: 42vh;
 	margin-left: auto;
 	margin-right: auto;
@@ -150,21 +150,21 @@ nav ul li {
 	width: 20%;
 }
 
-.block1 .send:hover {
+.slider .send:hover {
 	background-color: white;
 	color: black;
 }
 
-.block1 .next_button {
+.slider .next_button {
 	right: 15px;
 }
 
-.block1 .prev_button {
+.slider .prev_button {
 	left: 15px;
 }
 
-.block1 .next_button,
-.block1 .prev_button {
+.slider .next_button,
+.slider .prev_button {
 	bottom: 50vh;
 	background: transparent;
 	color: white;
@@ -181,9 +181,9 @@ nav ul li {
 
 
 
-/***BLOCK2***/
+/***WHAT WE DO BLOCK***/
 
-.block2 {
+.what_we_do {
 	height: 70vh;
 	text-align: center;
 	width: 80%;
@@ -215,7 +215,7 @@ nav ul li {
 
 /****BLOCK3****/
 
-.block3 {
+.excursion {
 	height: 80vh;
 	width: 100%;
 	background: url(/public/images/bg-dark.jpg);
@@ -223,15 +223,15 @@ nav ul li {
 	display: inline-block;
 }
 
-.block3 h1 {
+.excursion h1 {
 	color: #D3D3D3;
 }
 
-.block3 h3 {
+.excursion h3 {
 	color: #A9A9A9;
 }
 
-.block3 p {
+.excursion p {
 	color: #808080;
 }
 
@@ -393,7 +393,7 @@ nav ul li {
 
 
 /****MODELS****/
-.model_processes {
+.model_of_processes {
 	width: 60%;
 	height: 80vh;
 	margin-bottom: 200px;
@@ -439,7 +439,7 @@ nav ul li {
 	left: 62vw;
 }
 
-.model_processes > p {
+.model_of_processes > p {
 	margin-top: 300px;
 }
 

@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Nav_elem;
-use App\Models\Block1_elem;
-use App\Models\Block2_elem;
-use App\Models\Block3_elem;
-use App\Models\Block4_elem;
+use App\Models\Slider_elem;
+use App\Models\What_we_do_elem;
+use App\Models\Excursion_elem;
+use App\Models\Video_block_elem;
 use App\Models\Gallery_elem;
 use App\Models\Gallery_pic;
 use App\Models\News_elem;
@@ -36,28 +36,28 @@ class AdminController extends Controller
         return view('admin.edit_nav', compact('nav_elems'));
     }
 
-    public function edit_block1()
+    public function edit_slider()
     { 
-        $block1_elems = Block1_elem::find(1);
-        return view('admin.edit_block1', compact('block1_elems'));
+        $slider_elems = Slider_elem::find(1);
+        return view('admin.edit_slider', compact('slider_elems'));
     }
 
-    public function edit_block2()
+    public function edit_what_we_do()
     { 
-        $block2_elems = Block2_elem::find(1);
-        return view('admin.edit_block2', compact('block2_elems'));
+        $what_we_do_elems = What_we_do_elem::find(1);
+        return view('admin.edit_what_we_do', compact('what_we_do_elems'));
     }
 
-    public function edit_block3()
+    public function edit_excursion()
     { 
-        $block3_elems = Block3_elem::find(1);
-        return view('admin.edit_block3', compact('block3_elems'));
+        $excursion_elems = Excursion_elem::find(1);
+        return view('admin.edit_excursion', compact('excursion_elems'));
     }
 
-    public function edit_block4()
+    public function edit_video_block()
     { 
-        $block4_elems = Block4_elem::find(1);
-        return view('admin.edit_block4', compact('block4_elems'));
+        $video_block_elems = Video_block_elem::find(1);
+        return view('admin.edit_video_block', compact('video_block_elems'));
     }
 
     public function edit_gallery()
@@ -109,7 +109,7 @@ class AdminController extends Controller
     }
 
 
-    public function update_block1()
+    public function update_slider()
     { 
         $data = request()->validate([
             "title" => "string",
@@ -117,14 +117,14 @@ class AdminController extends Controller
             "button_name" => "string",
         ]);
 
-        $block1_elems = Block1_elem::find(1);
-        $block1_elems->update($data);
+        $slider_elems = Slider_elem::find(1);
+        $slider_elems->update($data);
 
-        return redirect()->route('admin.edit_block1');
+        return redirect()->route('admin.edit_slider');
     }
 
 
-    public function update_block2()
+    public function update_what_we_do()
     { 
         $data = request()->validate([
             "title" => "string",
@@ -135,14 +135,14 @@ class AdminController extends Controller
             "content2" => "string",
         ]);
 
-        $block2_elems = Block2_elem::find(1);
-        $block2_elems->update($data);
+        $what_we_do_elems = What_we_do_elem::find(1);
+        $what_we_do_elems->update($data);
 
-        return redirect()->route('admin.edit_block2');
+        return redirect()->route('admin.edit_what_we_do');
     }
 
 
-    public function update_block3()
+    public function update_excursion()
     { 
         $data = request()->validate([
             "title" => "string",
@@ -150,24 +150,24 @@ class AdminController extends Controller
             "img_url" => "string"
         ]);
 
-        $block3_elems = Block3_elem::find(1);
-        $block3_elems->update($data);
+        $excursion_elems = Excursion_elem::find(1);
+        $excursion_elems->update($data);
 
-        return redirect()->route('admin.edit_block3');
+        return redirect()->route('admin.edit_excursion');
     }
 
 
-    public function update_block4()
+    public function update_video_block()
     { 
         $data = request()->validate([
             "title" => "string",
             "subtitle" => "string",
         ]);
 
-        $block4_elems = Block4_elem::find(1);
-        $block4_elems->update($data);
+        $video_block_elems = Block4_elem::find(1);
+        $video_block_elems->update($data);
 
-        return redirect()->route('admin.edit_block4');
+        return redirect()->route('admin.edit_video_block');
     }
 
 
