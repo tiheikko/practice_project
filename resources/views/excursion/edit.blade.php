@@ -5,7 +5,7 @@
 		</div>
 
 		<div>
-			<form action="{{route('admin.update_excursion', $excursion_elems->id)}}" method="post">
+			<form action="{{route('excursion.update', $excursion_elems->id)}}" method="post">
 				@csrf
 				@method('patch')
 

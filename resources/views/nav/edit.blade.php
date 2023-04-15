@@ -5,7 +5,7 @@
 		</div>
 
 		<div>
-			<form action="{{route('admin.update_nav', $nav_elems->id)}}" method="post">
+			<form action="{{route('nav.update', $nav_elems->id)}}" method="post">
 				@csrf
 				@method('patch')
 

@@ -5,7 +5,7 @@
 		</div>
 
 		<div>
-			<form action="{{route('admin.update_slider', $slider_elems->id)}}" method="post">
+			<form action="{{route('slider.update', $slider_elems->id)}}" method="post">
 				@csrf
 				@method('patch')
 

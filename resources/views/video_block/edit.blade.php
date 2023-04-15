@@ -5,7 +5,7 @@
 		</div>
 
 		<div>
-			<form action="{{route('admin.update_video_block', $video_block_elems->id)}}" method="post">
+			<form action="{{route('video_block.edit', $video_block_elems->id)}}" method="post">
 				@csrf
 				@method('patch')
 

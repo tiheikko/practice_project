@@ -2,8 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\SiteViewController;
+
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PageController;
+
+use App\Http\Controllers\NavController;
+use App\Http\Controllers\SliderController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ExcursionController;
+use App\Http\Controllers\FooterController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProcessesController;
+use App\Http\Controllers\VideoBlockController;
+use App\Http\Controllers\WhatWeDoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,34 +28,63 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// MAIN PAGE
+Route::get('/main', [SiteViewController::class, 'index'])->name('main.index');
 
+
+
+// ADMIN PAGE
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-
 Route::get('/admin/edit', [AdminController::class, 'edit'])->name('admin.edit');
-Route::get('/admin/edit_nav', [AdminController::class, 'edit_nav'])->name('admin.edit_nav');
-Route::get('/admin/edit_slider', [AdminController::class, 'edit_slider'])->name('admin.edit_slider');
-Route::get('/admin/edit_what_we_do', [AdminController::class, 'edit_what_we_do'])->name('admin.edit_what_we_do');
-Route::get('/admin/edit_excursion', [AdminController::class, 'edit_excursion'])->name('admin.edit_excursion');
-Route::get('/admin/edit_video_block', [AdminController::class, 'edit_video_block'])->name('admin.edit_video_block');
-Route::get('/admin/edit_gallery', [AdminController::class, 'edit_gallery'])->name('admin.edit_gallery');
-Route::get('/admin/edit_news', [AdminController::class, 'edit_news'])->name('admin.edit_news');
-Route::get('/admin/edit_company', [AdminController::class, 'edit_company'])->name('admin.edit_company');
-Route::get('/admin/edit_processes', [AdminController::class, 'edit_processes'])->name('admin.edit_processes');
-Route::get('/admin/edit_footer', [AdminController::class, 'edit_footer'])->name('admin.edit_footer');
 
 
-Route::patch('/admin/update_nav', [AdminController::class, 'update_nav'])->name('admin.update_nav');
-Route::patch('/admin/update_slider', [AdminController::class, 'update_slider'])->name('admin.update_slider');
-Route::patch('/admin/update_what_we_do', [AdminController::class, 'update_what_we_do'])->name('admin.update_what_we_do');
-Route::patch('/admin/update_excursion', [AdminController::class, 'update_excursion'])->name('admin.update_excursion');
-Route::patch('/admin/update_video_block', [AdminController::class, 'update_block4'])->name('admin.update_video_block');
-Route::patch('/admin/update_gallery', [AdminController::class, 'update_gallery'])->name('admin.update_gallery');
-Route::patch('/admin/update_news', [AdminController::class, 'update_news'])->name('admin.update_news');
-Route::patch('/admin/update_company', [AdminController::class, 'update_company'])->name('admin.update_company');
-Route::patch('/admin/update_processes', [AdminController::class, 'update_processes'])->name('admin.update_processes');
-Route::patch('/admin/update_footer', [AdminController::class, 'update_footer'])->name('admin.update_footer');
 
-Route::get('/main', [PageController::class, 'index'])->name('main.index');
+// NAVIGATION EDIT AND UPDATE
+Route::get('/admin/nav/edit', [NavController::class, 'edit'])->name('nav.edit');
+Route::patch('/admin/nav/update', [NavController::class, 'update'])->name('nav.update');
+
+
+// SLIDER EDIT AND UPDATE
+Route::get('/admin/slider/edit', [SliderController::class, 'edit'])->name('slider.edit');
+Route::patch('/admin/slider/update', [SliderController::class, 'update'])->name('slider.update');
+
+
+// WHAT WE DO BLOCK EDIT AND UPDATE
+Route::get('/admin/what_we_do/edit', [WhatWeDoController::class, 'edit'])->name('what_we_do.edit');
+Route::patch('/admin/what_we_do/update', [WhatWeDoController::class, 'update'])->name('what_we_do.update');
+
+
+// EXCURSION BLOCK EDIT AND UPDATE
+Route::get('/admin/excursion/edit', [ExcursionController::class, 'edit'])->name('excursion.edit');
+Route::patch('/admin/excursion/update', [ExcursionController::class, 'update'])->name('excursion.update');
+
+
+// VIDEO BLOCK EDIT AND UPDATE
+Route::get('/admin/video_block/edit', [VideoBlockController::class, 'edit'])->name('video_block.edit');
+Route::patch('/admin/video_block/update', [VideoBlockController::class, 'update'])->name('video_block.update');
+
+
+// GALLERY EDIT AND UPDATE
+Route::get('/admin/gallery/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
+Route::patch('/admin/gallery/update', [GalleryController::class, 'update'])->name('gallery.update');
+
+
+// NEWS BLOCK EDIT AND UPDATE
+Route::get('/admin/news/edit', [NewsController::class, 'edit'])->name('news.edit');
+Route::patch('/admin/news/update', [NewsController::class, 'update'])->name('news.update');
+
+
+// COMPANY BLOCK EDIT AND UPDATE
+Route::get('/admin/company/edit', [CompanyController::class, 'edit'])->name('company.edit');
+Route::patch('/admin/company/update', [CompanyController::class, 'update'])->name('company.update');
+
+
+
+// PROCESSES BLOCK EDIT AND UPDATE
+Route::get('/admin/processes/edit', [ProcessesController::class, 'edit'])->name('processes.edit');
+Route::patch('/admin/processes/update', [ProcessesController::class, 'update'])->name('processes.update');
+
+
+// FOOTER EDIT AND UPDATE
+Route::get('/admin/footer/edit', [FooterController::class, 'edit'])->name('footer.edit');
+Route::patch('/admin/footer/update', [FooterController::class, 'update'])->name('footer.update');

@@ -5,7 +5,7 @@
 		</div>
 
 		<div>
-			<form action="{{route('admin.update_gallery', $gallery_elems->id)}}" method="post">
+			<form action="{{route('gallery.update', $gallery_elems->id)}}" method="post">
 				@csrf
 				@method('patch')
 

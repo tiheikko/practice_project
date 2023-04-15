@@ -9,16 +9,16 @@
 			<h3>Изменить: </h3>
 
 			<ul>
-				<li><a href="{{route('admin.edit_nav')}}">Навигация</a></li>
-				<li><a href="{{route('admin.edit_slider')}}">Слайдер</a></li>
-				<li><a href="{{route('admin.edit_what_we_do')}}">Чем занимаемся</a></li>
-				<li><a href="{{route('admin.edit_excursion')}}">Блок с экскурсией</a></li>
-				<li><a href="{{route('admin.edit_gallery')}}">Галерея</a></li>
-				<li><a href="{{route('admin.edit_video_block')}}">Блок с видео</a></li>
-				<li><a href="{{route('admin.edit_news')}}">Новости</a></li>
-				<li><a href="{{route('admin.edit_company')}}">О компании</a></li>
-				<li><a href="{{route('admin.edit_processes')}}">Модель процессов</a></li>
-				<li><a href="{{route('admin.edit_footer')}}">Подвал</a></li>
+				<li><a href="{{route('nav.edit')}}">Навигация</a></li>
+				<li><a href="{{route('slider.edit')}}">Слайдер</a></li>
+				<li><a href="{{route('what_we_do.edit')}}">Чем занимаемся</a></li>
+				<li><a href="{{route('excursion.edit')}}">Блок с экскурсией</a></li>
+				<li><a href="{{route('gallery.edit')}}">Галерея</a></li>
+				<li><a href="{{route('video_block.edit')}}">Блок с видео</a></li>
+				<li><a href="{{route('news.edit')}}">Новости</a></li>
+				<li><a href="{{route('company.edit')}}">О компании</a></li>
+				<li><a href="{{route('processes.edit')}}">Модель процессов</a></li>
+				<li><a href="{{route('footer.edit')}}">Подвал</a></li>
 			</ul>
 		</div>
 	</div>
