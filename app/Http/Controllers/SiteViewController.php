@@ -27,13 +27,14 @@ class SiteViewController extends Controller
         $what_we_do_elems = What_we_do_elem::find(1);
         $excursion_elems = Excursion_elem::find(1);
         $gallery_elems = Gallery_elem::find(1);
+        $gallery_pics = Gallery_pic::all();
         $video_block_elems = Video_block_elem::find(1);
         $news_elems = News_elem::find(1);
         $company_elems = Company_elem::find(1);
         $processes_elems = Processes_elem::find(1);
         $footer_elems = Footer_elem::find(1);
 
-        return view('main.index', compact('nav_elems', 'slider_elems', 'what_we_do_elems', 'excursion_elems', 'video_block_elems', 'gallery_elems', 'news_elems', 'company_elems',
+        return view('main.index', compact('nav_elems', 'slider_elems', 'what_we_do_elems', 'excursion_elems', 'video_block_elems', 'gallery_elems', 'gallery_pics', 'news_elems', 'company_elems',
             'processes_elems', 'footer_elems'));
     }
 

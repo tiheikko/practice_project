@@ -45,14 +45,19 @@
 		<h3>{{ $gallery_elems->subtitle }}</h3>
 
 		<div class="pics">
-			<script type="text/javascript">
+			@foreach($gallery_pics as $pic_url)
+
+				<div><img src="{{asset($pic_url->img_url)}}"></div>
+
+			@endforeach
+			<!-- <script type="text/javascript">
 				let gallery = document.querySelector('.pics');
 
 				for (let i = 0; i < 6; i++) {
 					gallery.innerHTML += `<div> <img src=""> </div>`;
 					console.log(1);
 				}
-			</script>
+			</script> -->
 		</div>
 	</div>
 
