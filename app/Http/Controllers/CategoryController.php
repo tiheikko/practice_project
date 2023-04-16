@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gallery_pic;
+use App\Models\Category;
+use App\Models\Gallery_image;
+
 use Illuminate\Http\Request;
 
-class GalleryPicsController extends Controller
+
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +17,11 @@ class GalleryPicsController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+
+        $images = Gallery_image::all();
+
+        return view('test.index', compact('categories', 'images'));
     }
 
     /**
@@ -41,10 +48,10 @@ class GalleryPicsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Gallery_pic  $gallery_pic
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Gallery_pic $gallery_pic)
+    public function show(Category $category)
     {
         //
     }
@@ -52,10 +59,10 @@ class GalleryPicsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Gallery_pic  $gallery_pic
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gallery_pic $gallery_pic)
+    public function edit(Category $category)
     {
         //
     }
@@ -64,10 +71,10 @@ class GalleryPicsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Gallery_pic  $gallery_pic
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery_pic $gallery_pic)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -75,10 +82,10 @@ class GalleryPicsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Gallery_pic  $gallery_pic
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gallery_pic $gallery_pic)
+    public function destroy(Category $category)
     {
         //
     }

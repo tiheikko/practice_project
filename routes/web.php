@@ -17,6 +17,9 @@ use App\Http\Controllers\ProcessesController;
 use App\Http\Controllers\VideoBlockController;
 use App\Http\Controllers\WhatWeDoController;
 
+
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\GalleryImagesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +30,8 @@ use App\Http\Controllers\WhatWeDoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/test', [CategoryController::class, 'index'])->name('test.index');
 
 // MAIN PAGE
 Route::get('/main', [SiteViewController::class, 'index'])->name('main.index');
@@ -67,6 +72,12 @@ Route::patch('/admin/video_block/update', [VideoBlockController::class, 'update'
 // GALLERY EDIT AND UPDATE
 Route::get('/admin/gallery/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
 Route::patch('/admin/gallery/update', [GalleryController::class, 'update'])->name('gallery.update');
+
+
+
+// GALLERY PICTURES EDIT AND UPDATE
+Route::resource('gallery_images', GalleryImagesController::class);
+
 
 
 // NEWS BLOCK EDIT AND UPDATE

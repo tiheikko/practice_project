@@ -45,7 +45,7 @@
 		<h3>{{ $gallery_elems->subtitle }}</h3>
 
 		<div class="pics">
-			@foreach($gallery_pics as $pic_url)
+			@foreach($gallery_images as $pic_url)
 
 				<div><img src="{{asset($pic_url->img_url)}}"></div>
 
