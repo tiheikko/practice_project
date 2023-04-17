@@ -12,7 +12,7 @@
 					<label for="img_url">URL: </label>
 					<input type="text" name="img_url">
 
-					<select>
+					<select name="category_id">
 						@foreach($categories as $category)
 							<option value="{{$category->id}}">{{$category->name}}</option>
 						@endforeach

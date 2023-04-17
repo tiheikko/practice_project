@@ -44,21 +44,72 @@
 		<h1>{{ $gallery_elems->title }}</h1>
 		<h3>{{ $gallery_elems->subtitle }}</h3>
 
-		<div class="pics">
-			@foreach($gallery_images as $pic_url)
+			<div class="categories">
+				<button type="button" value="all" onclick="checkCategory(this)">all</button>
 
-				<div><img src="{{asset($pic_url->img_url)}}"></div>
+				<button type="button" value="frogs" onclick="checkCategory(this)">frogs</button>
 
-			@endforeach
-			<!-- <script type="text/javascript">
-				let gallery = document.querySelector('.pics');
+				<button type="button" value="cats" onclick="checkCategory(this)">cats</button>
 
-				for (let i = 0; i < 6; i++) {
-					gallery.innerHTML += `<div> <img src=""> </div>`;
-					console.log(1);
+		    </div>
+
+		<script type="text/javascript">
+			function checkCategory(node) {
+				let category = node.value;
+
+				if (category == "all") {
+					document.querySelector('div#all').classList.add('chosen');
+					document.querySelector('div#frogs').classList.remove('chosen');
+					document.querySelector('div#cats').classList.remove('chosen');
+				} else if (category == "frogs") {
+					document.querySelector('div#frogs').classList.add('chosen');
+					document.querySelector('div#all').classList.remove('chosen');
+					document.querySelector('div#cats').classList.remove('chosen');
+				} else {
+					document.querySelector('div#cats').classList.add('chosen');
+					document.querySelector('div#all').classList.remove('chosen');
+					document.querySelector('div#frogs').classList.remove('chosen');
 				}
-			</script> -->
+			}
+
+		</script>
+
+		<div class="pics">
+
+		    <div id="all" class="chosen">
+				@foreach($categories as $category)
+					@for($i = 0; $i < count($category->images); $i++)
+						<img src="{{asset($category->images[$i]['img_url'])}}">
+					@endfor
+				@endforeach
+			</div>
+
+
+			
+			<div id="frogs" class="nice">
+				@foreach($categories as $category)
+					@if($category["name"] == "frogs")
+						@for($i = 0; $i < count($category->images); $i++)
+							<img src="{{asset($category->images[$i]['img_url'])}}">
+						@endfor
+					@endif
+				@endforeach
+			</div>
+		
+
+			
+			<div id="cats">
+				@foreach($categories as $category)
+					@if($category["name"] == "cats")
+						@for($i = 0; $i < count($category->images); $i++)
+							<img src="{{asset($category->images[$i]['img_url'])}}">
+						@endfor
+					@endif
+				@endforeach
+			</div>
+
 		</div>
+
 	</div>
 
 

@@ -15,6 +15,7 @@ use App\Models\News_elem;
 use App\Models\Company_elem;
 use App\Models\Processes_elem;
 use App\Models\Footer_elem;
+use App\Models\Category;
 
 
 class SiteViewController extends Controller
@@ -34,8 +35,9 @@ class SiteViewController extends Controller
         $processes_elems = Processes_elem::find(1);
         $footer_elems = Footer_elem::find(1);
 
-        return view('main.index', compact('nav_elems', 'slider_elems', 'what_we_do_elems', 'excursion_elems', 'video_block_elems', 'gallery_elems', 'gallery_images', 'news_elems', 'company_elems',
-            'processes_elems', 'footer_elems'));
+        $categories = Category::with('images')->get();
+
+        return view('main.index', compact('nav_elems', 'slider_elems', 'what_we_do_elems', 'excursion_elems', 'video_block_elems', 'gallery_elems', 'gallery_images', 'news_elems', 'company_elems', 'processes_elems', 'footer_elems', 'categories'));
     }
 
     

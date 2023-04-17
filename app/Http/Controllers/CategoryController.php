@@ -17,11 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-
-        $images = Gallery_image::all();
-
-        return view('test.index', compact('categories', 'images'));
+        
     }
 
     /**

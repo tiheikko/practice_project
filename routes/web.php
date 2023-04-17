@@ -31,7 +31,6 @@ use App\Http\Controllers\GalleryImagesController;
 |
 */
 
-Route::get('/test', [CategoryController::class, 'index'])->name('test.index');
 
 // MAIN PAGE
 Route::get('/main', [SiteViewController::class, 'index'])->name('main.index');

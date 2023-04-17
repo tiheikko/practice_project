@@ -258,10 +258,12 @@ nav ul li {
 }
 
 .pics > div {
+	display: flex;
 	width: 100%;
 	height: 90%;
 	background: gray;
 }
+
 
 .pics > div > img {
 	width: 100%;
@@ -275,6 +277,16 @@ nav ul li {
 	margin: 10px 0 200px 0;
 }
 
+
+div#all,
+div#cats,
+div#frogs {
+	display: none;
+}
+
+.pics > div.chosen {
+	display: flex !important;
+}
 
 
 

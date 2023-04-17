@@ -44,6 +44,7 @@ class GalleryImagesController extends Controller
         ]);
 
 
+
         $pic = Gallery_image::find($gallery_image->id);
         $pic->update($data);
 
