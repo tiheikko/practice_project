@@ -44,17 +44,15 @@
 		<h1>{{ $gallery_elems->title }}</h1>
 		<h3>{{ $gallery_elems->subtitle }}</h3>
 
-			<div class="categories">
+		<div class="categories">
 
+			<button type="button" value="all" onclick="checkCategory(this)" id="all_category">all</button>
 
-				<button type="button" value="all" onclick="checkCategory(this)">all</button>
-
-				@foreach($categories as $category) 
-					<button type="button" value="{{$category['name']}}" onclick="checkCategory(this)">{{$category['name']}}</button>
-				@endforeach
+			@foreach($categories as $category) 
+				<button type="button" value="{{$category['name']}}" onclick="checkCategory(this)" id="{{$category['name']}}_category">{{$category['name']}}</button>
+			@endforeach
 				
-
-		    </div>
+		</div>
 
 		<script type="text/javascript">
 			function checkCategory(node) {
@@ -64,14 +62,26 @@
 					document.querySelector('div#all').classList.add('chosen');
 					document.querySelector('div#frogs').classList.remove('chosen');
 					document.querySelector('div#cats').classList.remove('chosen');
+
+					document.querySelector('button#all_category').classList.add('chosen');
+					document.querySelector('button#frogs_category').classList.remove('chosen');
+					document.querySelector('button#cats_category').classList.remove('chosen');
 				} else if (category == "frogs") {
 					document.querySelector('div#frogs').classList.add('chosen');
 					document.querySelector('div#all').classList.remove('chosen');
 					document.querySelector('div#cats').classList.remove('chosen');
+
+					document.querySelector('button#frogs_category').classList.add('chosen');
+					document.querySelector('button#all_category').classList.remove('chosen');
+					document.querySelector('button#cats_category').classList.remove('chosen');
 				} else {
 					document.querySelector('div#cats').classList.add('chosen');
 					document.querySelector('div#all').classList.remove('chosen');
 					document.querySelector('div#frogs').classList.remove('chosen');
+
+					document.querySelector('button#cats_category').classList.add('chosen');
+					document.querySelector('button#all_category').classList.remove('chosen');
+					document.querySelector('button#frogs_category').classList.remove('chosen');
 				}
 			}
 
@@ -89,7 +99,7 @@
 
 
 			
-			<div id="frogs" class="nice">
+			<div id="frogs">
 				@foreach($categories as $category)
 					@if($category["name"] == "frogs")
 						@for($i = 0; $i < count($category->images); $i++)
