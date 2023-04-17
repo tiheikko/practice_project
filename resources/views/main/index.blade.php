@@ -45,11 +45,14 @@
 		<h3>{{ $gallery_elems->subtitle }}</h3>
 
 			<div class="categories">
+
+
 				<button type="button" value="all" onclick="checkCategory(this)">all</button>
 
-				<button type="button" value="frogs" onclick="checkCategory(this)">frogs</button>
-
-				<button type="button" value="cats" onclick="checkCategory(this)">cats</button>
+				@foreach($categories as $category) 
+					<button type="button" value="{{$category['name']}}" onclick="checkCategory(this)">{{$category['name']}}</button>
+				@endforeach
+				
 
 		    </div>
 
