@@ -247,34 +247,47 @@ nav ul li {
 	padding-bottom: 3%;
 }
 
+
 .categories {
 	margin-bottom: 15px;
 	width: 30%;
 	display: flex;
 }
 
-.categories > button {
-	border: none;
-	background: none;
-	cursor: pointer;
-	font-size: 1em;
+.categories span {
 	margin: 0 auto;
+	font-size: 1em;
+	font-weight: 600;
+	cursor: pointer;
 }
 
-.categories > button.chosen {
-	color: gray;
+.categories span.active {
+	color: grey;
 }
 
-
-.pics > div {
+.pics {
 	width: 80%;
 	height: 100%;
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	row-gap: 20px;
+	column-gap: 20px;
 	justify-content: center;
 }
 
-.pics > div > img {
+
+.pics div,
+.pics div img {
+	display: none;
+}
+
+
+.pics div.active {
+	display: inline-block;
+}
+
+.pics div.active img {
+	display: inline-block;
 	object-fit: cover;
 	width: 300px;
 	height: 250px;
@@ -282,22 +295,14 @@ nav ul li {
 	margin: 10px;
 }
 
+
+
 .separator {
 	color: black;
 	font-size: 2.5em;
 	margin: 10px 0 200px 0;
 }
 
-
-div#all,
-div#cats,
-div#frogs {
-	display: none;
-}
-
-.pics > div.chosen {
-	display: flex !important;
-}
 
 
 

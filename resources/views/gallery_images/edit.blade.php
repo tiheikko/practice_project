@@ -21,6 +21,12 @@
 
 					<button type="submit"> Изменить картинку </button>
 				</form>
+
+				<form action="{{route('gallery_images.destroy', $gallery_image->id)}}" method="post">
+					@csrf
+					@method('delete')
+					<button type="submit">Удалить картинку</button>
+				</form>
 				
 							
 			</form>

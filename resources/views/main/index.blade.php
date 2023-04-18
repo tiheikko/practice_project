@@ -45,83 +45,45 @@
 		<h3>{{ $gallery_elems->subtitle }}</h3>
 
 		<div class="categories">
-
-			<button type="button" value="all" onclick="checkCategory(this)" id="all_category">all</button>
-
-			@foreach($categories as $category) 
-				<button type="button" value="{{$category['name']}}" onclick="checkCategory(this)" id="{{$category['name']}}_category">{{$category['name']}}</button>
+			<span class="all active" onclick="selectCategory(this)"> all </span>
+			@foreach($categories as $category)
+				<span class="{{$category->name}}" onclick="selectCategory(this)">{{$category->name}}</span>
 			@endforeach
-				
 		</div>
-
-		<script type="text/javascript">
-			function checkCategory(node) {
-				let category = node.value;
-
-				if (category == "all") {
-					document.querySelector('div#all').classList.add('chosen');
-					document.querySelector('div#frogs').classList.remove('chosen');
-					document.querySelector('div#cats').classList.remove('chosen');
-
-					document.querySelector('button#all_category').classList.add('chosen');
-					document.querySelector('button#frogs_category').classList.remove('chosen');
-					document.querySelector('button#cats_category').classList.remove('chosen');
-				} else if (category == "frogs") {
-					document.querySelector('div#frogs').classList.add('chosen');
-					document.querySelector('div#all').classList.remove('chosen');
-					document.querySelector('div#cats').classList.remove('chosen');
-
-					document.querySelector('button#frogs_category').classList.add('chosen');
-					document.querySelector('button#all_category').classList.remove('chosen');
-					document.querySelector('button#cats_category').classList.remove('chosen');
-				} else {
-					document.querySelector('div#cats').classList.add('chosen');
-					document.querySelector('div#all').classList.remove('chosen');
-					document.querySelector('div#frogs').classList.remove('chosen');
-
-					document.querySelector('button#cats_category').classList.add('chosen');
-					document.querySelector('button#all_category').classList.remove('chosen');
-					document.querySelector('button#frogs_category').classList.remove('chosen');
-				}
-			}
-
-		</script>
 
 		<div class="pics">
-
-		    <div id="all" class="chosen">
-				@foreach($categories as $category)
-					@for($i = 0; $i < count($category->images); $i++)
-						<img src="{{asset($category->images[$i]['img_url'])}}">
-					@endfor
-				@endforeach
-			</div>
-
-
-			
-			<div id="frogs">
-				@foreach($categories as $category)
-					@if($category["name"] == "frogs")
-						@for($i = 0; $i < count($category->images); $i++)
-							<img src="{{asset($category->images[$i]['img_url'])}}">
-						@endfor
-					@endif
-				@endforeach
-			</div>
-		
-
-			
-			<div id="cats">
-				@foreach($categories as $category)
-					@if($category["name"] == "cats")
-						@for($i = 0; $i < count($category->images); $i++)
-							<img src="{{asset($category->images[$i]['img_url'])}}">
-						@endfor
-					@endif
-				@endforeach
-			</div>
-
+			@foreach($gallery_images as $image)
+				<div class="{{$image->category->name}} active">
+					<img src="{{asset($image->img_url)}}">
+				</div>
+			@endforeach
 		</div>
+
+
+		<script>
+			//Changing category function
+			function selectCategory(node) {
+				//if "all" was chosen
+				if (node.className == "all" || node.className == "all active"){
+					document.querySelectorAll('.categories span').forEach(e => e.classList.remove('active')); //removing 'active' class from every category
+
+					//adding 'active' class to every image block so we'll be able to see every image
+					document.querySelectorAll('.pics div').forEach(e => e.classList.add('active'));
+					node.classList.add('active'); //adding 'active' class to needed category
+
+				} else {
+					document.querySelectorAll('.categories span').forEach(e => e.classList.remove('active')); //removing 'active' class from every category
+					//removing 'active' class from every image
+					document.querySelectorAll('.pics div').forEach(e => e.classList.remove('active'));
+
+					//adding 'active' class to every needed image
+					document.querySelectorAll('.pics div').forEach(e => {
+						if (e.className == node.className) e.classList.add('active');
+					});
+					node.classList.add('active'); //adding 'active' class to needed category
+				}
+			}
+		</script>
 
 	</div>
 

@@ -12,15 +12,6 @@ class GalleryImagesController extends Controller
 
     public function index()
     {
-        // $pics = Gallery_pic::all();
-        
-        // foreach ($pics as $pic) {
-        //     echo "<p>{$pic->categories}</p>";
-        // }
-
-        // $pic = Gallery_pic::find(1);
-        // dd($pic->categories);
-
         $all_pics = Gallery_image::all();
 
         return view('gallery_images.index', compact('all_pics'));
@@ -66,6 +57,11 @@ class GalleryImagesController extends Controller
 
         Gallery_image::create($data);
 
+        return redirect()->route('gallery_images.index');
+    }
+
+    public function destroy(Gallery_image $gallery_image) {
+        $gallery_image->delete();
         return redirect()->route('gallery_images.index');
     }
 
