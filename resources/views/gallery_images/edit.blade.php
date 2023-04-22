@@ -6,12 +6,12 @@
 
 		<div>
 
-				<form action="{{route('gallery_images.update', $gallery_image->id)}}" method="post">
+				<form action="{{route('gallery_images.update', $gallery_image->id)}}" method="post" enctype="multipart/form-data">
 					@csrf
 					@method('patch')
 
 					<label for="img_url">Картинка {{$gallery_image->id}}</label>
-					<input type="text" name="img_url" value="{{$gallery_image->img_url}}">
+					<input type="file" name="img">
 
 					<select name="category_id">
 						@foreach($categories as $category)

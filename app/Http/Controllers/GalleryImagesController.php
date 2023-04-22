@@ -6,6 +6,7 @@ use App\Models\Gallery_image;
 use App\Models\Category;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryImagesController extends Controller
 {
@@ -29,15 +30,19 @@ class GalleryImagesController extends Controller
 
     public function update(Request $request, Gallery_image $gallery_image)
     {
-        $data = request()->validate([
-            'img_url' => 'string',
-            'category_id' => 'int'
-        ]);
+        // $data = request()->validate([
+        //      'category_id' => 'int'
+        // ]);
+
+        $file = $request->file('img');
+        $img_url = "/images/gallery/" . $file->getClientOriginalName();
+        $category_id = $request->category_id;
 
 
+        $file->move(public_path() . "/images/gallery/", $file->getClientOriginalName());
 
         $pic = Gallery_image::find($gallery_image->id);
-        $pic->update($data);
+        $pic->update(['img_url' => $img_url, 'category_id' => $category_id]);
 
         return redirect()->route('gallery_images.index');
     }
@@ -50,18 +55,26 @@ class GalleryImagesController extends Controller
 
 
     public function store(Request $request) {
-        $data = request()->validate([
-            'img_url' => 'string',
-            'category_id' => 'int'
-        ]);
+        $file = $request->file('img');
+        $img_url = "/images/gallery/" . $file->getClientOriginalName();
+        $category_id = $request->category_id;
 
-        Gallery_image::create($data);
+
+        $file->move(public_path() . "/images/gallery/", $file->getClientOriginalName());
+
+
+        Gallery_image::create(['img_url' => $img_url, 'category_id' => $category_id]);
 
         return redirect()->route('gallery_images.index');
     }
 
     public function destroy(Gallery_image $gallery_image) {
-        $gallery_image->delete();
+        $image = Gallery_image::findOrFail($gallery_image->id);
+
+        unlink(public_path() . $image->img_url);
+        
+        $image->delete();
+
         return redirect()->route('gallery_images.index');
     }
 
