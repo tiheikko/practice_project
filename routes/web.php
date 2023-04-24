@@ -20,6 +20,7 @@ use App\Http\Controllers\WhatWeDoController;
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryImagesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +31,19 @@ use App\Http\Controllers\GalleryImagesController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+
+
 
 
 // MAIN PAGE

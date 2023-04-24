@@ -120,6 +120,7 @@ class ComposerStaticInitf64241e80038ab3aa409d0f1b5f37c91
             'Laravel\\SerializableClosure\\' => 28,
             'Laravel\\Sanctum\\' => 16,
             'Laravel\\Sail\\' => 13,
+            'Laravel\\Breeze\\' => 15,
         ),
         'I' => 
         array (
@@ -403,6 +404,10 @@ class ComposerStaticInitf64241e80038ab3aa409d0f1b5f37c91
         array (
             0 => __DIR__ . '/..' . '/laravel/sail/src',
         ),
+        'Laravel\\Breeze\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/breeze/src',
+        ),
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
@@ -518,7 +523,7 @@ class ComposerStaticInitf64241e80038ab3aa409d0f1b5f37c91
         'App\\Http\\Controllers\\ExcursionController' => __DIR__ . '/../..' . '/app/Http/Controllers/ExcursionController.php',
         'App\\Http\\Controllers\\FooterController' => __DIR__ . '/../..' . '/app/Http/Controllers/FooterController.php',
         'App\\Http\\Controllers\\GalleryController' => __DIR__ . '/../..' . '/app/Http/Controllers/GalleryController.php',
-        'App\\Http\\Controllers\\GalleryPicsController' => __DIR__ . '/../..' . '/app/Http/Controllers/GalleryPicsController.php',
+        'App\\Http\\Controllers\\GalleryImagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/GalleryImagesController.php',
         'App\\Http\\Controllers\\NavController' => __DIR__ . '/../..' . '/app/Http/Controllers/NavController.php',
         'App\\Http\\Controllers\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewsController.php',
         'App\\Http\\Controllers\\ProcessesController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProcessesController.php',
@@ -542,7 +547,6 @@ class ComposerStaticInitf64241e80038ab3aa409d0f1b5f37c91
         'App\\Models\\Footer_elem' => __DIR__ . '/../..' . '/app/Models/Footer_elem.php',
         'App\\Models\\Gallery_elem' => __DIR__ . '/../..' . '/app/Models/Gallery_elem.php',
         'App\\Models\\Gallery_image' => __DIR__ . '/../..' . '/app/Models/Gallery_image.php',
-        'App\\Models\\Gallery_pic' => __DIR__ . '/../..' . '/app/Models/Gallery_pic.php',
         'App\\Models\\Nav_elem' => __DIR__ . '/../..' . '/app/Models/Nav_elem.php',
         'App\\Models\\News_elem' => __DIR__ . '/../..' . '/app/Models/News_elem.php',
         'App\\Models\\Processes_elem' => __DIR__ . '/../..' . '/app/Models/Processes_elem.php',
@@ -2699,6 +2703,11 @@ class ComposerStaticInitf64241e80038ab3aa409d0f1b5f37c91
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'Laravel\\Breeze\\BreezeServiceProvider' => __DIR__ . '/..' . '/laravel/breeze/src/BreezeServiceProvider.php',
+        'Laravel\\Breeze\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallCommand.php',
+        'Laravel\\Breeze\\Console\\InstallsApiStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsApiStack.php',
+        'Laravel\\Breeze\\Console\\InstallsBladeStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsBladeStack.php',
+        'Laravel\\Breeze\\Console\\InstallsInertiaStacks' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsInertiaStacks.php',
         'Laravel\\Sail\\Console\\AddCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/AddCommand.php',
         'Laravel\\Sail\\Console\\Concerns\\InteractsWithDockerComposeServices' => __DIR__ . '/..' . '/laravel/sail/src/Console/Concerns/InteractsWithDockerComposeServices.php',
         'Laravel\\Sail\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/InstallCommand.php',
@@ -4709,6 +4718,11 @@ class ComposerStaticInitf64241e80038ab3aa409d0f1b5f37c91
         'Spatie\\Ignition\\ErrorPage\\ErrorPageViewModel' => __DIR__ . '/..' . '/spatie/ignition/src/ErrorPage/ErrorPageViewModel.php',
         'Spatie\\Ignition\\ErrorPage\\Renderer' => __DIR__ . '/..' . '/spatie/ignition/src/ErrorPage/Renderer.php',
         'Spatie\\Ignition\\Ignition' => __DIR__ . '/..' . '/spatie/ignition/src/Ignition.php',
+        'Spatie\\Ignition\\Solutions\\OpenAi\\DummyCache' => __DIR__ . '/..' . '/spatie/ignition/src/Solutions/OpenAi/DummyCache.php',
+        'Spatie\\Ignition\\Solutions\\OpenAi\\OpenAiPromptViewModel' => __DIR__ . '/..' . '/spatie/ignition/src/Solutions/OpenAi/OpenAiPromptViewModel.php',
+        'Spatie\\Ignition\\Solutions\\OpenAi\\OpenAiSolution' => __DIR__ . '/..' . '/spatie/ignition/src/Solutions/OpenAi/OpenAiSolution.php',
+        'Spatie\\Ignition\\Solutions\\OpenAi\\OpenAiSolutionProvider' => __DIR__ . '/..' . '/spatie/ignition/src/Solutions/OpenAi/OpenAiSolutionProvider.php',
+        'Spatie\\Ignition\\Solutions\\OpenAi\\OpenAiSolutionResponse' => __DIR__ . '/..' . '/spatie/ignition/src/Solutions/OpenAi/OpenAiSolutionResponse.php',
         'Spatie\\Ignition\\Solutions\\SolutionProviders\\BadMethodCallSolutionProvider' => __DIR__ . '/..' . '/spatie/ignition/src/Solutions/SolutionProviders/BadMethodCallSolutionProvider.php',
         'Spatie\\Ignition\\Solutions\\SolutionProviders\\MergeConflictSolutionProvider' => __DIR__ . '/..' . '/spatie/ignition/src/Solutions/SolutionProviders/MergeConflictSolutionProvider.php',
         'Spatie\\Ignition\\Solutions\\SolutionProviders\\SolutionProviderRepository' => __DIR__ . '/..' . '/spatie/ignition/src/Solutions/SolutionProviders/SolutionProviderRepository.php',
