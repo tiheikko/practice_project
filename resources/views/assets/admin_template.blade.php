@@ -15,6 +15,7 @@
 				
 				<ul>
 					<li><a href="{{route('admin.edit')}}">Изменить страницы</a></li>
+					<li><a href="{{route('admin.requests')}}">Заявки</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -26,4 +27,5 @@
 		</main>
 
 	</body>
+
 </html>

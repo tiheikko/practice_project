@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteViewController;
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminContactFormController;
 
 use App\Http\Controllers\NavController;
 use App\Http\Controllers\SliderController;
@@ -16,6 +17,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProcessesController;
 use App\Http\Controllers\VideoBlockController;
 use App\Http\Controllers\WhatWeDoController;
+use App\Http\Controllers\ContactFormController;
 
 
 use App\Http\Controllers\CategoryController;
@@ -54,6 +56,11 @@ Route::get('/main', [SiteViewController::class, 'index'])->name('main.index');
 // ADMIN PAGE
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/admin/edit', [AdminController::class, 'edit'])->name('admin.edit');
+
+Route::get('/admin/requests', [AdminContactFormController::class, 'index'])->name('admin.requests');
+Route::get('/admin/requests/search', [AdminContactFormController::class, 'search'])->name('admin.request_search');
+Route::get('/admin/requests/sort', [AdminContactFormController::class, 'sort'])->name('admin.sort');
+Route::get('/admin/requests/sort_desc', [AdminContactFormController::class, 'sort_desc'])->name('admin.sort_desc');
 
 
 
@@ -112,3 +119,9 @@ Route::patch('/admin/processes/update', [ProcessesController::class, 'update'])-
 // FOOTER EDIT AND UPDATE
 Route::get('/admin/footer/edit', [FooterController::class, 'edit'])->name('footer.edit');
 Route::patch('/admin/footer/update', [FooterController::class, 'update'])->name('footer.update');
+
+
+
+//FORM FOR CONTACT
+Route::get('/main/contact', [ContactFormController::class, 'index'])->name('contact.index');
+Route::post('/main/contact', [ContactFormController::class, 'store'])->name('contact.store');

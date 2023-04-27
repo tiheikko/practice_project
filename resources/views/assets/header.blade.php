@@ -21,7 +21,7 @@
 			<ul>
 				<li> <a href="">{{$nav_elems->link1}}</a> </li>
 				<li> <a href="">{{$nav_elems->link2}}</a> </li>
-				<li> <a href="">{{$nav_elems->link3}}</a> </li>
+				<li> <a href="{{route('contact.index')}}">{{$nav_elems->link3}}</a> </li>
 			</ul>
 		</nav>
 

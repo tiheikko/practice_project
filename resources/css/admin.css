@@ -7,6 +7,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	background: #f1f2f3;
+	color: #6c757d;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -133,4 +134,97 @@ form button {
 	border-radius: 8px;
 	border: 1px solid #3b3f5c;
 	cursor: pointer;
+}
+
+
+
+
+/***FORMS TO CONTACT***/
+
+#search_requests {
+	width: 30%;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	margin: 0 0 0 20px;
+}
+
+#search_requests input {
+	width: 90%;
+	border-radius: 15px;
+	border: 1px solid grey;
+}
+
+
+
+#forms_table,
+#forms_table th,
+#forms_table td {
+	border: 1px solid grey;
+}
+
+#forms_table {
+	border-collapse: collapse;
+	margin: 10px 0;
+}
+
+#forms_table th,
+#forms_table td {
+	padding: 5px;
+}
+
+.date {
+	height: 40px;
+	display: flex;
+	
+}
+
+.date form {
+	height: 25px;
+	width: 25px;
+	padding: 5px;
+}
+
+.date form button {
+	width: 100%;
+	height: 100%;
+	border: none;
+	background: none;
+}
+
+
+#confirm_column,
+#reject_column {
+	width: 50px;
+}
+
+#confirm_column form, 
+#reject_column form {
+	padding: 0;
+	margin: 0;
+	width: 50px;
+}
+
+#confirm_column form button,
+#reject_column form button {
+	border: none;
+	background: none;
+	padding: 0;
+	margin: 0;
+	height: 50px;
+	width: 50px;
+}
+
+#confirm_column form button i,
+#reject_column form button i {
+	font-size: 2em;
+}
+
+
+.pagination {
+	display: flex;
+	margin-bottom: 15px;
+}
+
+.pagination li {
+	margin: 0 5px;
 }
