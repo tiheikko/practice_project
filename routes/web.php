@@ -23,6 +23,8 @@ use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryImagesController;
 
+use App\Http\Controllers\MailController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +49,9 @@ require __DIR__.'/auth.php';
 
 
 
+Route::get('/sendmail', [MailController::class, 'send'])->name('mail.send');
+
+
 
 // MAIN PAGE
 Route::get('/main', [SiteViewController::class, 'index'])->name('main.index');
@@ -61,6 +66,9 @@ Route::get('/admin/requests', [AdminContactFormController::class, 'index'])->nam
 Route::get('/admin/requests/search', [AdminContactFormController::class, 'search'])->name('admin.request_search');
 Route::get('/admin/requests/sort', [AdminContactFormController::class, 'sort'])->name('admin.sort');
 Route::get('/admin/requests/sort_desc', [AdminContactFormController::class, 'sort_desc'])->name('admin.sort_desc');
+Route::get('/admin/requests/register', [AdminContactFormController::class, 'register'])->name('request.register');
+Route::delete('/admin/requests/reject', [AdminContactFormController::class, 'destroy'])->name('request.destroy');
+
 
 
 
@@ -124,4 +132,5 @@ Route::patch('/admin/footer/update', [FooterController::class, 'update'])->name(
 
 //FORM FOR CONTACT
 Route::get('/main/contact', [ContactFormController::class, 'index'])->name('contact.index');
+Route::get('/main/contact1', [ContactFormController::class, 'index_error'])->name('contact.index_error');
 Route::post('/main/contact', [ContactFormController::class, 'store'])->name('contact.store');

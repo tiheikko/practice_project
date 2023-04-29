@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
+use App\Models\User;
 use App\Models\ContactForm;
 use App\Models\Nav_elem;
 use App\Models\Footer_elem;
@@ -20,6 +23,13 @@ class ContactFormController extends Controller
         $nav_elems = Nav_elem::find(1);
         $footer_elems = Footer_elem::find(1);
         return view('contact_form.index', compact('nav_elems', 'footer_elems'));
+    }
+
+    public function index_error()
+    {
+        $nav_elems = Nav_elem::find(1);
+        $footer_elems = Footer_elem::find(1);
+        return view('contact_form.index_error', compact('nav_elems', 'footer_elems'));
     }
 
     /**
@@ -40,17 +50,29 @@ class ContactFormController extends Controller
      */
     public function store(Request $request)
     {
-        $data = request()->validate([
+
+        $phone = request()->phone;
+        $email = request()->email;
+
+        $user_exist = DB::table('users')->where('phone', $phone)->orWhere('email', $email)->get()->count();
+
+        if ($user_exist === 1) {
+            return redirect()->route('contact.index_error');
+        } else {
+            $data = request()->validate([
             "name" => "string",
             "phone" => "string",
             "email" => "string",
             "theme" => "string",
             "message" => "string"
-        ]);
+             ]);
 
-        ContactForm::create($data);
+            ContactForm::create($data);
 
-        return redirect()->route('contact.index');
+            return redirect()->route('contact.index');
+        }
+
+    
     }
 
     /**

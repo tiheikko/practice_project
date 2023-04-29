@@ -44,14 +44,17 @@
 						<td>{{$form->created_at}}</td>
 
 						<td id="confirm_column">
-							<form>
-								<button type="submit"> <i class="fa-solid fa-circle-check"></i> </button>
+							<form action="{{ route('request.register') }}">
+								@csrf
+								<button type="submit" name="id" value="{{$form->id}}"> <i class="fa-solid fa-circle-check"></i> </button>
 							</form>
 						</td>
 
 						<td id="reject_column">
-							<form>
-								<button type="submit"> <i class="fa-sharp fa-solid fa-circle-xmark"></i> </button>
+							<form action="{{ route('request.destroy') }}" method="post">
+								@csrf
+								@method('delete')
+								<button type="submit" name="id" value="{{$form->id}}"> <i class="fa-sharp fa-solid fa-circle-xmark"></i> </button>
 							</form>
 						</td>
 

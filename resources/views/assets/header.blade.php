@@ -48,6 +48,10 @@
 				<div class="by">
 					<p>by {{ $footer_elems->by }}</p>
 				</div>
+
+				<div class="login">
+					<a href="{{ route('login') }}">Войти</a>
+				</div>
 			</div>
 		</footer>
 	</body>
