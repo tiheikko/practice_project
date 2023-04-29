@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'sendmail'),
+    'default' => env('MAIL_MAILER', 'smtp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -36,11 +36,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
+            'host' => env('MAIL_HOST', 'mailhog'),
+            'port' => env('MAIL_PORT', 1025),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME', 'admin'),
-            'password' => env('MAIL_PASSWORD', 'admin'),
+            'username' => env('MAIL_USERNAME', 'no-reply@email.com'),
+            'password' => env('MAIL_PASSWORD', '....'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
@@ -122,16 +122,16 @@ return [
         ],
     ],
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
-        'host' => env('MAIL_HOST', 'smtp.yandex.ru'),
-        'port' => env('MAIL_PORT', 587),
-        'from' => [
-            'address' => 'melonn.sweet@yandex.ru',
-            'name' => 'our company',
-        ],
-        'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-        'username' => env('MAIL_USERNAME', 'melonn.sweet@yandex.ru'),
-        'password' => env('MAIL_PASSWORD', 'rnuirscngvvnojzf'),
+    // /'driver' => env('MAIL_DRIVER', 'smtp'),
+    //     'host' => env('MAIL_HOST', 'smtp.yandex.ru'),
+    //     'port' => env('MAIL_PORT', 587),
+    //     'from' => [
+    //         'address' => 'melonn.sweet@yandex.ru',
+    //         'name' => 'our company',
+    //     ],
+    //     'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    //     'username' => env('MAIL_USERNAME', 'melonn.sweet@yandex.ru'),
+    //     'password' => env('MAIL_PASSWORD', 'rnuirscngvvnojzf'),
 
 
 ];
