@@ -156,19 +156,19 @@ form button {
 
 
 
-#forms_table,
-#forms_table th,
-#forms_table td {
+table,
+table th,
+table td {
 	border: 1px solid grey;
 }
 
-#forms_table {
+table {
 	border-collapse: collapse;
 	margin: 10px 0;
 }
 
-#forms_table th,
-#forms_table td {
+table th,
+table td {
 	padding: 5px;
 }
 
@@ -227,4 +227,49 @@ form button {
 
 .pagination li {
 	margin: 0 5px;
+}
+
+
+
+
+
+/*GOODS*/
+
+.goods {
+	margin: 20px 0;
+}
+
+.goods li {
+	font-size: 1.2em;
+	display: flex;
+	flex-direction: row;
+}
+
+.goods form {
+	width: 20px;
+	margin: 0;
+	padding: 0;
+}
+
+.goods button {
+	border: none;
+	background: none;
+	cursor: pointer;
+	width: 20px;
+	height: 25px;
+}
+
+.goods i {
+	font-size: 1.3em;
+}
+
+
+
+
+h3[class^="see_more"] ~ table {
+	display: none;
+}
+
+h3[class^="see_more"] ~ table.show {
+	display: block;
 }

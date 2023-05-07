@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Console\\Commands\\ExampleSendMailCommand' => $baseDir . '/app/Console/Commands/ExampleSendMailCommand.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AdminContactFormController' => $baseDir . '/app/Http/Controllers/AdminContactFormController.php',
@@ -27,9 +26,9 @@ return array(
     'App\\Http\\Controllers\\FooterController' => $baseDir . '/app/Http/Controllers/FooterController.php',
     'App\\Http\\Controllers\\GalleryController' => $baseDir . '/app/Http/Controllers/GalleryController.php',
     'App\\Http\\Controllers\\GalleryImagesController' => $baseDir . '/app/Http/Controllers/GalleryImagesController.php',
+    'App\\Http\\Controllers\\GoodController' => $baseDir . '/app/Http/Controllers/GoodController.php',
     'App\\Http\\Controllers\\LoginController' => $baseDir . '/app/Http/Controllers/LoginController.php',
     'App\\Http\\Controllers\\LogoutController' => $baseDir . '/app/Http/Controllers/LogoutController.php',
-    'App\\Http\\Controllers\\MailController' => $baseDir . '/app/Http/Controllers/MailController.php',
     'App\\Http\\Controllers\\NavController' => $baseDir . '/app/Http/Controllers/NavController.php',
     'App\\Http\\Controllers\\NewsController' => $baseDir . '/app/Http/Controllers/NewsController.php',
     'App\\Http\\Controllers\\ProcessesController' => $baseDir . '/app/Http/Controllers/ProcessesController.php',
@@ -50,7 +49,7 @@ return array(
     'App\\Http\\Requests\\Auth\\LoginRequest' => $baseDir . '/app/Http/Requests/Auth/LoginRequest.php',
     'App\\Http\\Requests\\LoginRequest' => $baseDir . '/app/Http/Requests/LoginRequest.php',
     'App\\Http\\Requests\\RegisterRequest' => $baseDir . '/app/Http/Requests/RegisterRequest.php',
-    'App\\Mail\\ExampleMail' => $baseDir . '/app/Mail/ExampleMail.php',
+    'App\\Mail\\ContactMail' => $baseDir . '/app/Mail/ContactMail.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Company_elem' => $baseDir . '/app/Models/Company_elem.php',
     'App\\Models\\ContactForm' => $baseDir . '/app/Models/ContactForm.php',
@@ -58,8 +57,10 @@ return array(
     'App\\Models\\Footer_elem' => $baseDir . '/app/Models/Footer_elem.php',
     'App\\Models\\Gallery_elem' => $baseDir . '/app/Models/Gallery_elem.php',
     'App\\Models\\Gallery_image' => $baseDir . '/app/Models/Gallery_image.php',
+    'App\\Models\\Good' => $baseDir . '/app/Models/Good.php',
     'App\\Models\\Nav_elem' => $baseDir . '/app/Models/Nav_elem.php',
     'App\\Models\\News_elem' => $baseDir . '/app/Models/News_elem.php',
+    'App\\Models\\Order' => $baseDir . '/app/Models/Order.php',
     'App\\Models\\Processes_elem' => $baseDir . '/app/Models/Processes_elem.php',
     'App\\Models\\Slider_elem' => $baseDir . '/app/Models/Slider_elem.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',

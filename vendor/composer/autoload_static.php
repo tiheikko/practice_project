@@ -535,7 +535,6 @@ class ComposerStaticInitf64241e80038ab3aa409d0f1b5f37c91
     );
 
     public static $classMap = array (
-        'App\\Console\\Commands\\ExampleSendMailCommand' => __DIR__ . '/../..' . '/app/Console/Commands/ExampleSendMailCommand.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminContactFormController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminContactFormController.php',
@@ -556,9 +555,9 @@ class ComposerStaticInitf64241e80038ab3aa409d0f1b5f37c91
         'App\\Http\\Controllers\\FooterController' => __DIR__ . '/../..' . '/app/Http/Controllers/FooterController.php',
         'App\\Http\\Controllers\\GalleryController' => __DIR__ . '/../..' . '/app/Http/Controllers/GalleryController.php',
         'App\\Http\\Controllers\\GalleryImagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/GalleryImagesController.php',
+        'App\\Http\\Controllers\\GoodController' => __DIR__ . '/../..' . '/app/Http/Controllers/GoodController.php',
         'App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/LoginController.php',
         'App\\Http\\Controllers\\LogoutController' => __DIR__ . '/../..' . '/app/Http/Controllers/LogoutController.php',
-        'App\\Http\\Controllers\\MailController' => __DIR__ . '/../..' . '/app/Http/Controllers/MailController.php',
         'App\\Http\\Controllers\\NavController' => __DIR__ . '/../..' . '/app/Http/Controllers/NavController.php',
         'App\\Http\\Controllers\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewsController.php',
         'App\\Http\\Controllers\\ProcessesController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProcessesController.php',
@@ -579,7 +578,7 @@ class ComposerStaticInitf64241e80038ab3aa409d0f1b5f37c91
         'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
         'App\\Http\\Requests\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/LoginRequest.php',
         'App\\Http\\Requests\\RegisterRequest' => __DIR__ . '/../..' . '/app/Http/Requests/RegisterRequest.php',
-        'App\\Mail\\ExampleMail' => __DIR__ . '/../..' . '/app/Mail/ExampleMail.php',
+        'App\\Mail\\ContactMail' => __DIR__ . '/../..' . '/app/Mail/ContactMail.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Company_elem' => __DIR__ . '/../..' . '/app/Models/Company_elem.php',
         'App\\Models\\ContactForm' => __DIR__ . '/../..' . '/app/Models/ContactForm.php',
@@ -587,8 +586,10 @@ class ComposerStaticInitf64241e80038ab3aa409d0f1b5f37c91
         'App\\Models\\Footer_elem' => __DIR__ . '/../..' . '/app/Models/Footer_elem.php',
         'App\\Models\\Gallery_elem' => __DIR__ . '/../..' . '/app/Models/Gallery_elem.php',
         'App\\Models\\Gallery_image' => __DIR__ . '/../..' . '/app/Models/Gallery_image.php',
+        'App\\Models\\Good' => __DIR__ . '/../..' . '/app/Models/Good.php',
         'App\\Models\\Nav_elem' => __DIR__ . '/../..' . '/app/Models/Nav_elem.php',
         'App\\Models\\News_elem' => __DIR__ . '/../..' . '/app/Models/News_elem.php',
+        'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
         'App\\Models\\Processes_elem' => __DIR__ . '/../..' . '/app/Models/Processes_elem.php',
         'App\\Models\\Slider_elem' => __DIR__ . '/../..' . '/app/Models/Slider_elem.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',

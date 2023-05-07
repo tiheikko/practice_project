@@ -6,6 +6,10 @@ use App\Http\Controllers\SiteViewController;
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminContactFormController;
+use App\Http\Controllers\AdminOrderController;
+
+use App\Http\Controllers\UserOrderController;
+use App\Http\Controllers\GoodInOrderController;
 
 use App\Http\Controllers\NavController;
 use App\Http\Controllers\SliderController;
@@ -23,7 +27,8 @@ use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryImagesController;
 
-use App\Http\Controllers\MailController;
+
+use App\Http\Controllers\GoodController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,8 +53,18 @@ require __DIR__.'/auth.php';
 
 
 
+// ORDERS' PAGES FOR USER
+Route::get('/dashboard/user/orders', [UserOrderController::class, 'index'])->name('user_orders.index');
+Route::get('/dashboard/user/orders/{order}', [UserOrderController::class, 'show'])->name('user_orders.show');
+Route::post('/dashboard/user/orders', [UserOrderController::class, 'store'])->name('user_orders.store');
+Route::patch('/dashboard/user/orders/', [UserOrderController::class, 'sendOrder'])->name('user_orders.send_order');
+Route::delete('/dashboard/user/orders/cancel', [UserOrderController::class, 'destroy'])->name('user_orders.destroy');
 
-Route::get('/sendmail', [MailController::class, 'send'])->name('mail.send');
+
+Route::get('/dashboard/user/orders/order/add_goods', [GoodInOrderController::class, 'create'])->name('order_good.create');
+Route::post('/dashboard/user/orders/order/add_goods', [GoodInOrderController::class, 'store'])->name('order_good.store');
+Route::delete('/dashboard/user/orders/order/delete_goods', [GoodInOrderController::class, 'destroy'])->name('order_good.destroy');
+
 
 
 
@@ -69,6 +84,14 @@ Route::get('/admin/requests/sort_desc', [AdminContactFormController::class, 'sor
 Route::get('/admin/requests/register', [AdminContactFormController::class, 'register'])->name('request.register');
 Route::delete('/admin/requests/reject', [AdminContactFormController::class, 'destroy'])->name('request.destroy');
 
+
+
+// ORDERS' PAGES FOR ADMIN
+Route::get('/admin/orders', [AdminOrderController::class, 'index'])->name('admin.orders');
+Route::get('/admin/orders/{order}', [AdminOrderController::class, 'show'])->name('admin.order_show');
+Route::patch('/admin/orders/confirm', [AdminOrderController::class, 'confirm'])->name('admin.order_confirm');
+Route::patch('/admin/orders/finish', [AdminOrderController::class, 'finish'])->name('admin.order_finish');
+Route::delete('/admin/orders', [AdminOrderController::class, 'destroy'])->name('admin.order_destroy');
 
 
 
@@ -134,3 +157,9 @@ Route::patch('/admin/footer/update', [FooterController::class, 'update'])->name(
 Route::get('/main/contact', [ContactFormController::class, 'index'])->name('contact.index');
 Route::get('/main/contact1', [ContactFormController::class, 'index_error'])->name('contact.index_error');
 Route::post('/main/contact', [ContactFormController::class, 'store'])->name('contact.store');
+
+
+
+
+
+Route::resource('/admin/goods', GoodController::class);

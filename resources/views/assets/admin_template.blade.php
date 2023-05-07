@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>admin page</title>
 		@vite(['resources/css/admin.css'])
+		<script src="https://kit.fontawesome.com/407dedc4b6.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<nav>
@@ -16,6 +17,8 @@
 				<ul>
 					<li><a href="{{route('admin.edit')}}">Изменить страницы</a></li>
 					<li><a href="{{route('admin.requests')}}">Заявки</a></li>
+					<li><a href="{{route('admin.orders')}}">Заказы</a></li>
+					<li><a href="{{route('goods.index')}}">Продукты</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -27,5 +30,7 @@
 		</main>
 
 	</body>
+
+	@extends('plugins.see_more')
 
 </html>

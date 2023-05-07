@@ -68,7 +68,7 @@ class AdminContactFormController extends Controller
         $faker = \Faker\Factory::create();
         $password = $faker->regexify('[A-Za-z0-9]{10}');
 
-        $hashed_password = Hash::make($password);
+        $hashed_password = Hash::make('1111');
         
         User::create([
             'name' => $username,
